@@ -1,0 +1,28 @@
+{
+  "name": "discord-canvas",
+  "version": "1.0.1",
+  "description": "Image manipulation for discord bot or other app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KuroXI/discord-canvas.git"
+  },
+  "keywords": [
+    "image",
+    "canvas",
+    "manipulation",
+    "discord"
+  ],
+  "author": "Victor Gonzales <apexjacob04@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KuroXI/discord-canvas/issues"
+  },
+  "homepage": "https://github.com/KuroXI/discord-canvas#readme",
+  "dependencies": {
+    "canvas": "^2.8.0"
+  }
+}
