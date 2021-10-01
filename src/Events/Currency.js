@@ -39,7 +39,7 @@ class Currency {
                 text_color: '#ACAEB2',
                 value_color: '#FFFFFF'
             },
-            currency: ''
+            currency: '$'
         }
     }
 
@@ -135,14 +135,14 @@ class Currency {
 
     /**
      * 
-     * @param {Number} value User's wallet balance
+     * @param {Number} value User's regular balance
      * @param {String} textColor Text Color
      * @param {String} valueColor Value Color
      */
     setRegular(value = 0, textColor = '#ACAEB2', valueColor = '#FFFFFF') {
-        if (typeof value !== 'number') throw new TypeError('regular value needs to be number!')
-        if (typeof textColor !== 'string') throw new TypeError('regular text color needs to be string!')
-        if (typeof valueColor !== 'string') throw new TypeError('regular value color needs to be string!')
+        if (typeof value !== 'number') throw new TypeError('Regular value needs to be number!')
+        if (typeof textColor !== 'string') throw new TypeError('Regular text color needs to be string!')
+        if (typeof valueColor !== 'string') throw new TypeError('Regular value color needs to be string!')
 
         this.data.regular.value = value;
         this.data.regular.text_color = textColor
@@ -152,14 +152,14 @@ class Currency {
 
     /**
      * 
-     * @param {Number} value User's leaderboard fake
+     * @param {Number} value User's leaderboard rank
      * @param {String} textColor Text Color
      * @param {String} valueColor Value Color
      */
     setFake(value = 0, textColor = '#ACAEB2', valueColor = '#FFFFFF') {
-        if (typeof value !== 'number') throw new TypeError('fake value needs to be number!')
-        if (typeof textColor !== 'string') throw new TypeError('fake text color needs to be string!')
-        if (typeof valueColor !== 'string') throw new TypeError('fake value color needs to be string!')
+        if (typeof value !== 'number') throw new TypeError('Fake value needs to be number!')
+        if (typeof textColor !== 'string') throw new TypeError('Fake text color needs to be string!')
+        if (typeof valueColor !== 'string') throw new TypeError('Fake value color needs to be string!')
 
         this.data.fake.value = value;
         this.data.fake.text_color = textColor
@@ -169,7 +169,7 @@ class Currency {
 
     /**
      * 
-     * @param {Number} value User's bank balance
+     * @param {Number} value User's leave balance
      * @param {String} textColor Text Color
      * @param {String} valueColor Value Color
      */
@@ -247,11 +247,11 @@ class Currency {
         
         ctx.font = '41px Montserrat-Medium'
         ctx.fillStyle = this.data.regular.value_color
-        ctx.fillText(this.data.currency + CurrencyFormat(this.data.wallet.value), 153, 782)
-        ctx.fillStyle = this.data.fake.value_color
+        ctx.fillText(this.data.currency + CurrencyFormat(this.data.regular.value), 153, 782)
+        ctx.fillStyle = this.data.rank.value_color
         ctx.fillText(CurrencyFormat(this.data.rank.value), 375, 782)
         ctx.fillStyle = this.data.leave.value_color
-        ctx.fillText(this.data.currency + CurrencyFormat(this.data.bank.value), 599, 782)
+        ctx.fillText(this.data.currency + CurrencyFormat(this.data.leave.value), 599, 782)
 
         ctx.fillStyle= this.data.seperator.color
         ctx.fillRect(50, 648, 650, this.data.seperator.width)
