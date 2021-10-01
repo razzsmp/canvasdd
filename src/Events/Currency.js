@@ -30,7 +30,7 @@ class Currency {
                 value_color: '#FFFFFF'
             },
             fake: {
-                value: 0,
+                value: 1,
                 text_color: '#ACAEB2',
                 value_color: '#FFFFFF'
             },
