@@ -30,7 +30,7 @@ class Currency {
                 value_color: '#FFFFFF'
             },
             fake: {
-                value: 1,
+                value: 0,
                 text_color: '#ACAEB2',
                 value_color: '#FFFFFF'
             },
@@ -135,14 +135,14 @@ class Currency {
 
     /**
      * 
-     * @param {Number} value User's Regular balance
+     * @param {Number} value User's wallet balance
      * @param {String} textColor Text Color
      * @param {String} valueColor Value Color
      */
     setRegular(value = 0, textColor = '#ACAEB2', valueColor = '#FFFFFF') {
-        if (typeof value !== 'number') throw new TypeError('Regular value needs to be number!')
-        if (typeof textColor !== 'string') throw new TypeError('Regular text color needs to be string!')
-        if (typeof valueColor !== 'string') throw new TypeError('Regular value color needs to be string!')
+        if (typeof value !== 'number') throw new TypeError('regular value needs to be number!')
+        if (typeof textColor !== 'string') throw new TypeError('regular text color needs to be string!')
+        if (typeof valueColor !== 'string') throw new TypeError('regular value color needs to be string!')
 
         this.data.regular.value = value;
         this.data.regular.text_color = textColor
@@ -239,7 +239,7 @@ class Currency {
         ctx.font = '50px Montserrat-SemiBold'
         ctx.fillStyle = this.data.regular.text_color
         ctx.fillText('Regular', 153, 717)
-        ctx.fillStyle = this.data.top.text_color
+        ctx.fillStyle = this.data.fake.text_color
         ctx.fillText('Fake', 375, 717)
         ctx.fillStyle = this.data.leave.text_color
         ctx.fillText('Leave', 599, 717)
@@ -247,11 +247,11 @@ class Currency {
         
         ctx.font = '41px Montserrat-Medium'
         ctx.fillStyle = this.data.regular.value_color
-        ctx.fillText(this.data.currency + CurrencyFormat(this.data.regular.value), 153, 782)
+        ctx.fillText(this.data.currency + CurrencyFormat(this.data.wallet.value), 153, 782)
         ctx.fillStyle = this.data.fake.value_color
-        ctx.fillText(CurrencyFormat(this.data.fake.value), 375, 782)
+        ctx.fillText(CurrencyFormat(this.data.rank.value), 375, 782)
         ctx.fillStyle = this.data.leave.value_color
-        ctx.fillText(this.data.currency + CurrencyFormat(this.data.leave.value), 599, 782)
+        ctx.fillText(this.data.currency + CurrencyFormat(this.data.bank.value), 599, 782)
 
         ctx.fillStyle= this.data.seperator.color
         ctx.fillRect(50, 648, 650, this.data.seperator.width)
