@@ -1,6 +1,6 @@
 {
   "name": "discord-canvas",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "Image manipulation for discord bot or other app",
   "main": "index.js",
   "scripts": {
