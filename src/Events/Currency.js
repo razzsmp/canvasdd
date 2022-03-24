@@ -24,12 +24,12 @@ class Currency {
                 width: 1,
                 color: '#959595'
             },
-            regular: {
+            wins: {
                 value: 0,
                 text_color: '#ACAEB2',
                 value_color: '#FFFFFF'
             },
-            fake: {
+            bans: {
                 value: 1,
                 text_color: '#ACAEB2',
                 value_color: '#FFFFFF'
@@ -134,19 +134,18 @@ class Currency {
     }
 
     /**
-     * 
-     * @param {Number} value User's regular balance
+     *wins balance
      * @param {String} textColor Text Color
      * @param {String} valueColor Value Color
      */
-    setRegular(value = 0, textColor = '#ACAEB2', valueColor = '#FFFFFF') {
-        if (typeof value !== 'number') throw new TypeError('Regular value needs to be number!')
-        if (typeof textColor !== 'string') throw new TypeError('Regular text color needs to be string!')
-        if (typeof valueColor !== 'string') throw new TypeError('Regular value color needs to be string!')
+    setWins(value = 0, textColor = '#ACAEB2', valueColor = '#FFFFFF') {
+        if (typeof value !== 'number') throw new TypeError('wins value needs to be number!')
+        if (typeof textColor !== 'string') throw new TypeError('wins text color needs to be string!')
+        if (typeof valueColor !== 'string') throw new TypeError('wins value color needs to be string!')
 
-        this.data.regular.value = value;
-        this.data.regular.text_color = textColor
-        this.data.regular.value_color = valueColor;
+        this.data.wins.value = value;
+        this.data.wins.text_color = textColor
+        this.data.wins.value_color = valueColor;
         return this;
     }
 
@@ -156,14 +155,14 @@ class Currency {
      * @param {String} textColor Text Color
      * @param {String} valueColor Value Color
      */
-    setFake(value = 0, textColor = '#ACAEB2', valueColor = '#FFFFFF') {
-        if (typeof value !== 'number') throw new TypeError('Fake value needs to be number!')
-        if (typeof textColor !== 'string') throw new TypeError('Fake text color needs to be string!')
-        if (typeof valueColor !== 'string') throw new TypeError('Fake value color needs to be string!')
+    setBans(value = 0, textColor = '#ACAEB2', valueColor = '#FFFFFF') {
+        if (typeof value !== 'number') throw new TypeError('bans value needs to be number!')
+        if (typeof textColor !== 'string') throw new TypeError('bans text color needs to be string!')
+        if (typeof valueColor !== 'string') throw new TypeError('bans value color needs to be string!')
 
-        this.data.fake.value = value;
-        this.data.fake.text_color = textColor
-        this.data.fake.value_color = valueColor;
+        this.data.bans.value = value;
+        this.data.bans.text_color = textColor
+        this.data.bans.value_color = valueColor;
         return this;
     }
 
@@ -237,17 +236,17 @@ class Currency {
             ctx.fillText(this.data.user.username, 375, 583, 700)
         }
         ctx.font = '50px Montserrat-SemiBold'
-        ctx.fillStyle = this.data.regular.text_color
-        ctx.fillText('Regular', 153, 717)
-        ctx.fillStyle = this.data.fake.text_color
-        ctx.fillText('Fake', 375, 717)
+        ctx.fillStyle = this.data.wins.text_color
+        ctx.fillText('Wins', 153, 717)
+        ctx.fillStyle = this.data.bans.text_color
+        ctx.fillText('4v4Ban', 375, 717)
         ctx.fillStyle = this.data.leave.text_color
-        ctx.fillText('Leave', 599, 717)
+        ctx.fillText('Nothing', 599, 717)
 
         
         ctx.font = '41px Montserrat-Medium'
-        ctx.fillStyle = this.data.regular.value_color
-        ctx.fillText(this.data.currency + CurrencyFormat(this.data.regular.value), 153, 782)
+        ctx.fillStyle = this.data.wins.value_color
+        ctx.fillText(this.data.currency + CurrencyFormat(this.data.wins.value), 153, 782)
         ctx.fillStyle = this.data.rank.value_color
         ctx.fillText(CurrencyFormat(this.data.rank.value), 375, 782)
         ctx.fillStyle = this.data.leave.value_color
