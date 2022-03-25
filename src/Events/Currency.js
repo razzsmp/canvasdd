@@ -247,8 +247,8 @@ class Currency {
         ctx.font = '41px Montserrat-Medium'
         ctx.fillStyle = this.data.wins.value_color
         ctx.fillText(this.data.currency + CurrencyFormat(this.data.wins.value), 153, 782)
-        ctx.fillStyle = this.data.rank.value_color
-        ctx.fillText(CurrencyFormat(this.data.rank.value), 375, 782)
+        ctx.fillStyle = this.data.bans.value_color
+        ctx.fillText(CurrencyFormat(this.data.bans.value), 375, 782)
         ctx.fillStyle = this.data.leave.value_color
         ctx.fillText(this.data.currency + CurrencyFormat(this.data.leave.value), 599, 782)
 
